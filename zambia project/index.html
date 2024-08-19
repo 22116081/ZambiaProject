@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zambia Business Licensing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 space-x-4">
+                <!-- Left Side: Logo -->
+                <div class="flex items-center space-x-4">
+                    <img src="logo.png" alt="Logo" class="h-8 w-auto">
+                </div>
+
+                <!-- Center: Links -->
+                <div class="flex space-x-2 text-sm">
+                    <nav>
+                        <ul class="flex space-x-6">
+                            <li><a href="index.html" class="text-gray-700 font-semibold">Home</a></li>
+                            <li><a href="aboutus.html" class="text-gray-700 font-semibold">About Us</a></li>
+                            <li><a href="browslicenses.html" class="text-gray-700 font-semibold">Browse Licenses</a></li>
+                            <li><a href="#" class="text-gray-700 font-semibold">Useful Links</a></li>
+                            <li><a href="faq.html" class="text-gray-700 font-semibold">FAQs</a></li>
+                            <li><a href="#" class="text-gray-700 font-semibold">News</a></li>
+                            <li><a href="contactus.html" class="text-gray-700 font-semibold">Contact Us</a></li>
+                        </ul>
+                </div>
+
+                <!-- Right Side: Buttons and Search -->
+                <div class="flex items-center space-x-2">
+                    <button class="px-2 py-1 bg-yellow-500 text-white text-sm rounded hover:bg-yellow-600">NOTICE AND COMMENTS</button>
+                    <select class="p-1 bg-gray-100 text-sm rounded border border-gray-300">
+                        <option>Select Language ▼</option>
+                        <!-- Add language options here -->
+                    </select>
+                    <input type="text" placeholder="Search" class="p-1 bg-gray-100 text-sm rounded border border-gray-300 focus:ring focus:ring-yellow-500">
+                </div>
+
+                <!-- Mobile Menu -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-900 hover:text-yellow-500 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Links -->
+    <div class="md:hidden bg-white shadow-md">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">HOME</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">ABOUT US</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">BROWSE LICENSES</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">USEFUL LINKS</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">FAQS</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">NEWS</a>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">CONTACT US</a>
+        </div>
+    </div>
+
+    <!-- Hero Section with Carousel -->
+    <section x-data="{ currentSlide: 0 }" class="relative bg-gray-800 text-white text-center">
+        <div class="carousel overflow-hidden relative h-96">
+            <div :style="{ transform: `translateX(-${currentSlide * 100}%)` }" class="flex transition-transform duration-500 ease-in-out">
+                <!-- Slide 1 -->
+                <div class="min-w-full h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('slide1.jpg');">
+                    <div class="max-w-2xl mx-auto">
+                        <h1 class="text-4xl font-bold mb-4">Your Business Licensing Starts Here</h1>
+                        <p class="text-xl mb-8">Find Hundreds of Business Licenses</p>
+                        <div class="flex justify-center">
+                            <input type="text" placeholder="Find Licenses quickly by typing here..." class="p-2 w-64 rounded-l-md text-gray-700">
+                            <button class="p-2 bg-red-500 text-white rounded-r-md">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="min-w-full h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('slide2.jpg');">
+                    <div class="max-w-2xl mx-auto">
+                        <h1 class="text-4xl font-bold mb-4">Explore Business Opportunities</h1>
+                        <p class="text-xl mb-8">Access Licensing Information Easily</p>
+                        <div class="flex justify-center">
+                            <input type="text" placeholder="Find Licenses quickly by typing here..." class="p-2 w-64 rounded-l-md text-gray-700">
+                            <button class="p-2 bg-red-500 text-white rounded-r-md">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="min-w-full h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('slide3.jpg');">
+                    <div class="max-w-2xl mx-auto">
+                        <h1 class="text-4xl font-bold mb-4">Start Your Business Journey</h1>
+                        <p class="text-xl mb-8">Get the Licenses You Need</p>
+                        <div class="flex justify-center">
+                            <input type="text" placeholder="Find Licenses quickly by typing here..." class="p-2 w-64 rounded-l-md text-gray-700">
+                            <button class="p-2 bg-red-500 text-white rounded-r-md">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="absolute inset-0 flex justify-between items-center p-4">
+                <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 2" class="bg-gray-800 p-2 rounded-full">
+                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button @click="currentSlide = (currentSlide < 2) ? currentSlide + 1 : 0" class="bg-gray-800 p-2 rounded-full">
+                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Indicators -->
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                <button @click="currentSlide = 0" :class="{ 'bg-white': currentSlide === 0 }" class="h-2 w-2 bg-gray-400 rounded-full"></button>
+                <button @click="currentSlide = 1" :class="{ 'bg-white': currentSlide === 1 }" class="h-2 w-2 bg-gray-400 rounded-full"></button>
+                <button @click="currentSlide = 2" :class="{ 'bg-white': currentSlide === 2 }" class="h-2 w-2 bg-gray-400 rounded-full"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-blue-600 text-white py-12">
+        <div class="max-w-4xl mx-auto flex justify-around">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold">39</h3>
+                <p>Jurisdictions</p>
+            </div>
+            <div class="text-center">
+                <h3 class="text-3xl font-bold">109</h3>
+                <p>Business Types</p>
+            </div>
+            <div class="text-center">
+                <h3 class="text-3xl font-bold">561</h3>
+                <p>Licenses Published</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Search Section -->
+    <section class="py-16 bg-white text-center">
+        <h2 class="text-2xl font-bold mb-8">Advanced Search</h2>
+        <form class="flex justify-center space-x-4">
+            <select class="p-2 border border-gray-300 rounded-md">
+                <option>Select Jurisdiction</option>
+            </select>
+            <select class="p-2 border border-gray-300 rounded-md">
+                <option>Select Industry</option>
+            </select>
+            <select class="p-2 border border-gray-300 rounded-md">
+                <option>Select Business Type</option>
+            </select>
+            <button class="p-2 bg-blue-600 text-white rounded-md">Get Results</button>
+        </form>
+    </section>
+
+    <!-- Popular Licenses Section -->
+    <section class="py-16 bg-gray-100 text-center">
+        <h2 class="text-2xl font-bold mb-8">Popular</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-4 rounded-md shadow-md">
+                <p class="font-semibold">GREEN NATIONAL REGISTRATION CARD (NRC)</p>
+                <p class="text-gray-500">Ministry Home Affairs</p>
+            </div>
+            <div class="bg-white p-4 rounded-md shadow-md">
+                <p class="font-semibold">Business Levy Certificate</p>
+                <p class="text-gray-500">Ministry of Local Government</p>
+            </div>
+            <div class="bg-white p-4 rounded-md shadow-md">
+                <p class="font-semibold">Passport</p>
+                <p class="text-gray-500">Ministry Home Affairs</p>
+            </div>
+            <div class="bg-white p-4 rounded-md shadow-md">
+                <p class="font-semibold">Mineral Trading Permit</p>
+                <p class="text-gray-500">Ministry of Mines and Mineral Development</p>
+            </div>
+        </div>
+        <button class="mt-8 p-2 bg-blue-600 text-white rounded-md">Browse More Licenses</button>
+    </section>
+
+    <!-- Business Start Up Procedure Section -->
+    <section class="bg-blue-800 text-white py-16">
+        <h2 class="text-2xl font-bold text-center mb-8">Business Start Up Procedure</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-blue-700 p-4 rounded-md">
+                <h3 class="font-bold">Register Your Business</h3>
+                <p class="text-sm">Name Clearance, Local Company, Business Name</p>
+            </div>
+            <div class="bg-blue-700 p-4 rounded-md">
+                <h3 class="font-bold">Tax Clearance</h3>
+                <p class="text-sm">TPIN Registration, Customs and Excise, Domestic Taxes</p>
+            </div>
+            <div class="bg-blue-700 p-4 rounded-md">
+                <h3 class="font-bold">Land and Property</h3>
+                <p class="text-sm">Land Ownership Procedure</p>
+            </div>
+            <div class="bg-blue-700 p-4 rounded-md">
+                <h3 class="font-bold">Immigration</h3>
+                <p class="text-sm">Visas and Permits</p>
+            </div>
+            <div class="bg-blue-700 p-4 rounded-md">
+                <h3 class="font-bold">Investment in Zambia</h3>
+                <p class="text-sm">Investor Guide, Multi-Facility Economic Zones</p>
+            </div>
+            <div class="bg-blue-700 p-4 rounded-md">
+                <h3 class="font-bold">Trading Across Borders</h3>
+                <p class="text-sm">Customs Services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <p>Business Links. Summary. Be creative</p>
+            <form class="flex space-x-2">
+                <input type="text" placeholder="Your Name" class="p-2 rounded-md text-gray-900">
+                <input type="email" placeholder="Your Email" class="p-2 rounded-md text-gray-900">
+                <button class="p-2 bg-blue-600 text-white rounded-md">Submit</button>
+            </form>
+        </div>
+    </footer>
+</body>
+</html>
