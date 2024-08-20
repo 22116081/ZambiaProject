@@ -3,233 +3,662 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zambia Business Licensing</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js" defer></script>
+    <title>Business Licensing</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        h1{
+            filter: brightness(150%);
+        }
+        .swiper {
+            width: 100%;
+            height: 150vh; /* Full viewport height */
+            position: relative;
+        
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%; /* Full height of the swiper container */
+          
+            
+        }
+
+       
+
+        .swiper-slide .swiper-slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Swiper Pagination */
+        .swiper-pagination-bullet {
+            background: #fff;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #1D4ED8; /* Blue color */
+        }
+
+        /* Custom arrow buttons */
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff; /* White color */
+        }
+
+                /* Section Below Carousel */
+                .stats-section {
+            height: 100vh; /* Same height as the carousel */
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            background-color: #f8f9fa; /* Light gray background */
+            
+            
+        }
+
+        .stats-container {
+            
+            justify-content: space-around;
+            width: 100%; /* Adjust width as needed */
+            justify-content: center;
+        }
+
+        .stats-item {
+            font-size: 5rem; /* Larger font size */
+            font-weight: bold;
+            color: #000000; /* Blue color */
+            margin: 0 2rem; /* Margin for spacing between items */
+            text-align: center;
+            
+            display: flex;
+        }
+
+        .stats-label {
+            font-size: 1.5rem; /* Larger label size */
+            color: #333;
+            display: flex;
+            margin-top:100px;
+            
+        }
+
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .search-bar {
+            width: 70%;
+            max-width: 600px;
+            padding: 10px;
+            border-radius: 8px;
+             /* Green border */
+            outline: none;
+            font-size: 1rem;
+            box-sizing: border-box;
+            color:black;
+            margin-bottom: 200px;
+            z-index: 10;
+        }
+
+        .search-button {
+            
+            border: none;
+            color: #102fb9;
+            padding: 13px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-left: -50px;
+            margin-bottom: 200px;
+        }
+
+        /* Headline Text */
+        .headline {
+            font-size: 5rem;
+            font-weight: bold;
+            margin-bottom: 0px;
+            z-index: 2;
+        }
+
+        .subheadline {
+            font-size: 2.5rem;
+            margin-bottom: 300px;
+            z-index: 2;
+        }
+
+
+    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 text-gray-900 transition duration-500 ease-in-out" id="body">
 
-    <!-- Header Section -->
     <!-- Navbar -->
-    <nav class="bg-white shadow-md">
+    <nav class="bg-white dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 space-x-4">
-                <!-- Left Side: Logo -->
-                <div class="flex items-center space-x-4">
-                    <img src="logo.png" alt="Logo" class="h-8 w-auto">
+            <div class="flex justify-between items-center h-40">
+                <div class="flex items-center">
+                    <span class="text-xl font-semibold text-blue-600 dark:text-white" id="site-title"><h1>REPUBLIC OF ZAMBIA</h1>BUSINESS LICENSING PORTAL</span>
                 </div>
-
-                <!-- Center: Links -->
-                <div class="flex space-x-2 text-sm">
-                    <nav>
-                        <ul class="flex space-x-6">
-                            <li><a href="index.html" class="text-gray-700 font-semibold">Home</a></li>
-                            <li><a href="aboutus.html" class="text-gray-700 font-semibold">About Us</a></li>
-                            <li><a href="browslicenses.html" class="text-gray-700 font-semibold">Browse Licenses</a></li>
-                            <li><a href="#" class="text-gray-700 font-semibold">Useful Links</a></li>
-                            <li><a href="faq.html" class="text-gray-700 font-semibold">FAQs</a></li>
-                            <li><a href="#" class="text-gray-700 font-semibold">News</a></li>
-                            <li><a href="contactus.html" class="text-gray-700 font-semibold">Contact Us</a></li>
-                        </ul>
+                <div class="hidden md:flex md:space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition duration-200" id="nav-home">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition duration-200" id="nav-about">About Us</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition duration-200" id="nav-contact">Contact Us</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition duration-200" id="nav-faq">FAQ</a>
                 </div>
-
-                <!-- Right Side: Buttons and Search -->
-                <div class="flex items-center space-x-2">
-                    <button class="px-2 py-1 bg-yellow-500 text-white text-sm rounded hover:bg-yellow-600">NOTICE AND COMMENTS</button>
-                    <select class="p-1 bg-gray-100 text-sm rounded border border-gray-300">
-                        <option>Select Language ▼</option>
-                        <!-- Add language options here -->
-                    </select>
-                    <input type="text" placeholder="Search" class="p-1 bg-gray-100 text-sm rounded border border-gray-300 focus:ring focus:ring-yellow-500">
+                <div class="hidden md:flex items-center">
+                    <form class="flex">
+                        <input type="text" placeholder="Search..." class="px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white dark:border-gray-600">
+                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 transition duration-200">Search</button>
+                    </form>
                 </div>
-
-                <!-- Mobile Menu -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-gray-900 hover:text-yellow-500 focus:outline-none">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <div class="flex md:hidden items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
                     </button>
                 </div>
+                <div class="flex items-center">
+                    
+                    <div class="relative inline-block text-left ml-4">
+                        <div>
+                            <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700" id="language-button" aria-expanded="true" aria-haspopup="true">
+                                <span id="language-label">EN</span>
+                                <svg id="arrow-icon" class="-mr-1 ml-2 h-5 w-5 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06 0L10 10.293l3.71-3.08a.75.75 0 011.05 1.14l-4.25 3.5a.75.75 0 01-1 0l-4.25-3.5a.75.75 0 010-1.14z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Dropdown Menu -->
+                        <div id="language-dropdown" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 hidden" role="menu" aria-orientation="vertical" aria-labelledby="language-button" tabindex="-1">
+                            <div class="py-1" role="none">
+                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700" role="menuitem" data-lang="en">EN</a>
+                                <a href="#" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700" role="menuitem" data-lang="sp">SP</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="ml-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">Reviews</button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white dark:bg-gray-800">
+            <div class="px-4 py-2">
+                <a href="#" class="block text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 py-2 transition duration-200" id="mobile-nav-home">Home</a>
+                <a href="#" class="block text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 py-2 transition duration-200" id="mobile-nav-about">About Us</a>
+                <a href="#" class="block text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 py-2 transition duration-200" id="mobile-nav-contact">Contact Us</a>
+                <a href="#" class="block text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 py-2 transition duration-200" id="mobile-nav-faq">FAQ</a>
+            </div>
+            <div class="px-4 py-2">
+                <form class="flex">
+                    <input type="text" placeholder="Search..." class="px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white dark:border-gray-600">
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 transition duration-200">Search</button>
+                </form>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu Links -->
-    <div class="md:hidden bg-white shadow-md">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">HOME</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">ABOUT US</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">BROWSE LICENSES</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">USEFUL LINKS</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">FAQS</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">NEWS</a>
-            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-yellow-500">CONTACT US</a>
+    <!-- Full-Screen Content Carousel Slider -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide " style="background-image: url('assets/1.jpeg');">
+                <div class="swiper-slide-content">
+                    <h2 class="headline text-white">Your Business Licensing Starts Here</h2>
+                    <p class="subheadline text-white">Find Hundreds of Business Licenses</p>
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Find Licenses quickly by typing here ..">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6a4 4 0 100 8 4 4 0 000-8zm0 0v.01M21 21l-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide" style="background-image: url('assets/2.jpeg');">
+                <div class="swiper-slide-content">
+                    <h2 class="headline text-white">Your Business Licensing Starts Here</h2>
+                    <p class="subheadline text-white">Find Hundreds of Business Licenses</p>
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Find Licenses quickly by typing here ..">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6a4 4 0 100 8 4 4 0 000-8zm0 0v.01M21 21l-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide" style="background-image: url('assets/3.jpeg');">
+                <div class="swiper-slide-content">
+                    <h2 class="headline text-white">Your Business Licensing Starts Here</h2>
+                    <p class="subheadline text-white">Find Hundreds of Business Licenses</p>
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Find Licenses quickly by typing here ..">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6a4 4 0 100 8 4 4 0 000-8zm0 0v.01M21 21l-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="swiper-slide" style="background-image: url('assets/4.jpeg');">
+                <div class="swiper-slide-content">
+                    <h2 class="headline text-white">Your Business Licensing Starts Here</h2>
+                    <p class="subheadline text-white">Find Hundreds of Business Licenses</p>
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Find Licenses quickly by typing here ..">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6a4 4 0 100 8 4 4 0 000-8zm0 0v.01M21 21l-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+           
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide" style="background-image: url('assets/5.jpeg');">
+                <div class="swiper-slide-content">
+                    <h2 class="headline text-white">Your Business Licensing Starts Here</h2>
+                    <p class="subheadline text-white">Find Hundreds of Business Licenses</p>
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Find Licenses quickly by typing here ..">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6a4 4 0 100 8 4 4 0 000-8zm0 0v.01M21 21l-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="swiper-slide" style="background-image: url('assets/6.jpeg');">
+                <div class="swiper-slide-content">
+                    <h2 class="headline text-white">Your Business Licensing Starts Here</h2>
+                    <p class="subheadline text-white">Find Hundreds of Business Licenses</p>
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Find Licenses quickly by typing here ..">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6a4 4 0 100 8 4 4 0 000-8zm0 0v.01M21 21l-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+<!-- Slide 7 -->
+            <div class="swiper-slide" style="background-image: url('assets/7.jpeg');">
+                <div class="swiper-slide-content">
+                    <h2 class="headline text-white">Your Business Licensing Starts Here</h2>
+                    <p class="subheadline text-white">Find Hundreds of Business Licenses</p>
+                    <div class="search-container">
+                        <input type="text" class="search-bar" placeholder="Find Licenses quickly by typing here ..">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6a4 4 0 100 8 4 4 0 000-8zm0 0v.01M21 21l-4.35-4.35" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-container flex justify-center space-x-12">
+        <div class="stats-item text-center">
+            <div class="countup text-9xl font-bold text-black" data-target="39">0</div>
+            <div class="stats-label text-lg text-gray-700 mt-2">Jurisdictions</div>
+        </div>
+        <div class="stats-item text-center">
+            <div class="countup text-9xl font-bold text-black" data-target="109">0</div>
+            <div class="stats-label text-lg text-gray-700 mt-2">Business Types</div>
+        </div>
+        <div class="stats-item text-center">
+            <div class="countup text-9xl font-bold text-black" data-target="563">0</div>
+            <div class="stats-label text-lg text-gray-700 mt-2">Licenses Published</div>
+        </div>
+    </div>
+</section>
+ <!-- New Information Section -->
+ <section class="bg-white py-40">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-6xl font-bold mb-10">Zambia Business Licensing Information Portal</h2>
+        <p class="text-lg text-gray-700 mb-6">
+            Businesses operating in Zambia are typically required to obtain one or more licenses and permits,
+            depending on the activities of their enterprise. This website enables you to obtain information on the 
+            licenses pertaining to your business. Use the search below to find the licenses you will require to start your business.
+        </p>
+    </div>
+</section>
+
+
+                <!-- Advanced Search Section -->
+    <section class="bg-gray-100 py-40">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-7xl font-bold mb-4">Advanced Search</h2>
+            <p class="text-lg text-gray-600 mb-8">Search by Location, Industry, and Business Type</p>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+                <select class="form-select block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option>Select Jurisdiction</option>
+                    <!-- Add options here -->
+                </select>
+                <select class="form-select block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option>Select Industry</option>
+                    <!-- Add options here -->
+                </select>
+                <select class="form-select block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option>Select Business Type</option>
+                    <!-- Add options here -->
+                </select>
+            </div>
+            <div class="mt-6">
+                <input type="text" placeholder="Select Business Activities" class="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            </div>
+            <button class="mt-8 bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition">Get Results</button>
+        </div>
+    </section>
+
+                <!-- Popular Section -->
+<section class="bg-white py-40">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-7xl font-bold mb-4">Popular</h2>
+        <p class="text-lg text-gray-600 mb-8">Most Viewed Licenses</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- License Card 1 -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-blue-600">GREEN NATIONAL REGISTRATION CARD (NRC)</h3>
+                <p class="text-sm text-gray-500 mt-2">Ministry of Home Affairs</p>
+            </div>
+            <!-- License Card 2 -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-blue-600">Business Levy Certificate</h3>
+                <p class="text-sm text-gray-500 mt-2">Ministry of Local Government</p>
+            </div>
+            <!-- License Card 3 -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-blue-600">Passport</h3>
+                <p class="text-sm text-gray-500 mt-2">Ministry of Home Affairs</p>
+            </div>
+            <!-- License Card 4 -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-blue-600">Mineral Trading Permit</h3>
+                <p class="text-sm text-gray-500 mt-2">Ministry of Mines and Mineral Development</p>
+            </div>
+        </div>
+        
+        <button class="mt-8 bg-black text-white px-6 py-3 rounded-md hover:bg-gray-700 transition">
+            Browse More Licenses
+        </button>
+    </div>
+</section>
+
+            <!-- Business Startup Procedure Section -->
+<section class="bg-gray-100 py-40">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-7xl font-bold mb-4 text-gray-900">Business Start Up Procedure</h2>
+        <p class="text-lg text-gray-600 mb-12">Find detailed requirements to operate a business in Zambia.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Register Your Business</h3>
+                <ul class="space-y-2 text-left">
+                    <li><a href="#" class="text-blue-600 hover:underline">Name Clearance</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">Local Company</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">Business Name</a></li>
+                </ul>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Tax Clearance</h3>
+                <ul class="space-y-2 text-left">
+                    <li><a href="#" class="text-blue-600 hover:underline">TPIN Registration</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">Customs and Excise</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">Domestic Taxes</a></li>
+                </ul>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Land and Property</h3>
+                <ul class="space-y-2 text-left">
+                    <li><a href="#" class="text-blue-600 hover:underline">Land Ownership Procedure</a></li>
+                </ul>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Immigration</h3>
+                <ul class="space-y-2 text-left">
+                    <li><a href="#" class="text-blue-600 hover:underline">Visas and Permits</a></li>
+                </ul>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Investment in Zambia</h3>
+                <ul class="space-y-2 text-left">
+                    <li><a href="#" class="text-blue-600 hover:underline">Investor Guide</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">Multi-Facility - Economic Zones</a></li>
+                </ul>
+            </div>
+            <!-- Card 6 -->
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Trading Across Borders</h3>
+                <ul class="space-y-2 text-left">
+                    <li><a href="#" class="text-blue-600 hover:underline">Customs Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+   ]
+
+   <!-- Footer Section -->
+<footer class="bg-gray-800 py-16 text-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <!-- Newsletter Signup -->
+        <div class="col-span-2">
+            <h2 class="text-xl font-bold mb-4">Sign up for our Newsletter</h2>
+            <form action="#" method="POST" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <input type="text" placeholder="First name*" class="w-full p-3 rounded bg-gray-700 border-none text-white">
+                    <input type="text" placeholder="Last name*" class="w-full p-3 rounded bg-gray-700 border-none text-white">
+                    <input type="email" placeholder="Email*" class="w-full p-3 rounded bg-gray-700 border-none text-white">
+                </div>
+                <div class="text-left text-sm text-gray-300">
+                    <label class="flex items-start space-x-2">
+                        <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                        <span>By adding your name and email, you agree to receive our email communications and confirm that you are at least 18 years of age.*</span>
+                    </label>
+                </div>
+                <button class="mt-4 px-6 py-3 bg-transparent border border-white text-white font-bold rounded hover:bg-white hover:text-gray-800 transition">Submit</button>
+            </form>
+        </div>
+        
+        <!-- Footer Links -->
+        <div>
+            <h3 class="text-lg font-bold mb-4">Get involved</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:underline">Support us</a></li>
+                <li><a href="#" class="hover:underline">Partner with us</a></li>
+                <li><a href="#" class="hover:underline">Grow your business</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-bold mb-4">Company</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:underline">Careers</a></li>
+                <li><a href="#" class="hover:underline">Contact us</a></li>
+                <li><a href="#" class="hover:underline">News</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-lg font-bold mb-4">Governance</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="hover:underline">Financials</a></li>
+                <li><a href="#" class="hover:underline">Anti-corruption policy</a></li>
+                <li><a href="#" class="hover:underline">Grievances</a></li>
+            </ul>
         </div>
     </div>
 
-    <!-- Hero Section with Carousel -->
-    <section x-data="{ currentSlide: 0 }" class="relative bg-gray-800 text-white text-center">
-        <div class="carousel overflow-hidden relative h-96">
-            <div :style="{ transform: `translateX(-${currentSlide * 100}%)` }" class="flex transition-transform duration-500 ease-in-out">
-                <!-- Slide 1 -->
-                <div class="min-w-full h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('slide1.jpg');">
-                    <div class="max-w-2xl mx-auto">
-                        <h1 class="text-4xl font-bold mb-4">Your Business Licensing Starts Here</h1>
-                        <p class="text-xl mb-8">Find Hundreds of Business Licenses</p>
-                        <div class="flex justify-center">
-                            <input type="text" placeholder="Find Licenses quickly by typing here..." class="p-2 w-64 rounded-l-md text-gray-700">
-                            <button class="p-2 bg-red-500 text-white rounded-r-md">Search</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="min-w-full h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('slide2.jpg');">
-                    <div class="max-w-2xl mx-auto">
-                        <h1 class="text-4xl font-bold mb-4">Explore Business Opportunities</h1>
-                        <p class="text-xl mb-8">Access Licensing Information Easily</p>
-                        <div class="flex justify-center">
-                            <input type="text" placeholder="Find Licenses quickly by typing here..." class="p-2 w-64 rounded-l-md text-gray-700">
-                            <button class="p-2 bg-red-500 text-white rounded-r-md">Search</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="min-w-full h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('slide3.jpg');">
-                    <div class="max-w-2xl mx-auto">
-                        <h1 class="text-4xl font-bold mb-4">Start Your Business Journey</h1>
-                        <p class="text-xl mb-8">Get the Licenses You Need</p>
-                        <div class="flex justify-center">
-                            <input type="text" placeholder="Find Licenses quickly by typing here..." class="p-2 w-64 rounded-l-md text-gray-700">
-                            <button class="p-2 bg-red-500 text-white rounded-r-md">Search</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carousel Controls -->
-            <div class="absolute inset-0 flex justify-between items-center p-4">
-                <button @click="currentSlide = (currentSlide > 0) ? currentSlide - 1 : 2" class="bg-gray-800 p-2 rounded-full">
-                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                </button>
-                <button @click="currentSlide = (currentSlide < 2) ? currentSlide + 1 : 0" class="bg-gray-800 p-2 rounded-full">
-                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Indicators -->
-            <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-                <button @click="currentSlide = 0" :class="{ 'bg-white': currentSlide === 0 }" class="h-2 w-2 bg-gray-400 rounded-full"></button>
-                <button @click="currentSlide = 1" :class="{ 'bg-white': currentSlide === 1 }" class="h-2 w-2 bg-gray-400 rounded-full"></button>
-                <button @click="currentSlide = 2" :class="{ 'bg-white': currentSlide === 2 }" class="h-2 w-2 bg-gray-400 rounded-full"></button>
-            </div>
+    <!-- Footer Bottom -->
+    <div class="max-w-7xl mx-auto mt-12 flex flex-col lg:flex-row justify-between items-center text-sm text-gray-400">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <div class="flex space-x-4 mt-4 lg:mt-0">
+            <a href="#" aria-label="Instagram" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube" class="text-white hover:text-gray-300"><i class="fab fa-youtube"></i></a>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <!-- Stats Section -->
-    <section class="bg-blue-600 text-white py-12">
-        <div class="max-w-4xl mx-auto flex justify-around">
-            <div class="text-center">
-                <h3 class="text-3xl font-bold">39</h3>
-                <p>Jurisdictions</p>
-            </div>
-            <div class="text-center">
-                <h3 class="text-3xl font-bold">109</h3>
-                <p>Business Types</p>
-            </div>
-            <div class="text-center">
-                <h3 class="text-3xl font-bold">561</h3>
-                <p>Licenses Published</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Advanced Search Section -->
-    <section class="py-16 bg-white text-center">
-        <h2 class="text-2xl font-bold mb-8">Advanced Search</h2>
-        <form class="flex justify-center space-x-4">
-            <select class="p-2 border border-gray-300 rounded-md">
-                <option>Select Jurisdiction</option>
-            </select>
-            <select class="p-2 border border-gray-300 rounded-md">
-                <option>Select Industry</option>
-            </select>
-            <select class="p-2 border border-gray-300 rounded-md">
-                <option>Select Business Type</option>
-            </select>
-            <button class="p-2 bg-blue-600 text-white rounded-md">Get Results</button>
-        </form>
-    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            spaceBetween: 0, // No space between slides
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000, // 5 seconds delay between slides
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                // Responsive settings can be adjusted as needed
+                640: {
+                    slidesPerView: 1, // Full screen on tablets and above
+                },
+                768: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 1,
+                },
+            }
+        });
 
-    <!-- Popular Licenses Section -->
-    <section class="py-16 bg-gray-100 text-center">
-        <h2 class="text-2xl font-bold mb-8">Popular</h2>
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-4 rounded-md shadow-md">
-                <p class="font-semibold">GREEN NATIONAL REGISTRATION CARD (NRC)</p>
-                <p class="text-gray-500">Ministry Home Affairs</p>
-            </div>
-            <div class="bg-white p-4 rounded-md shadow-md">
-                <p class="font-semibold">Business Levy Certificate</p>
-                <p class="text-gray-500">Ministry of Local Government</p>
-            </div>
-            <div class="bg-white p-4 rounded-md shadow-md">
-                <p class="font-semibold">Passport</p>
-                <p class="text-gray-500">Ministry Home Affairs</p>
-            </div>
-            <div class="bg-white p-4 rounded-md shadow-md">
-                <p class="font-semibold">Mineral Trading Permit</p>
-                <p class="text-gray-500">Ministry of Mines and Mineral Development</p>
-            </div>
-        </div>
-        <button class="mt-8 p-2 bg-blue-600 text-white rounded-md">Browse More Licenses</button>
-    </section>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    <!-- Business Start Up Procedure Section -->
-    <section class="bg-blue-800 text-white py-16">
-        <h2 class="text-2xl font-bold text-center mb-8">Business Start Up Procedure</h2>
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-blue-700 p-4 rounded-md">
-                <h3 class="font-bold">Register Your Business</h3>
-                <p class="text-sm">Name Clearance, Local Company, Business Name</p>
-            </div>
-            <div class="bg-blue-700 p-4 rounded-md">
-                <h3 class="font-bold">Tax Clearance</h3>
-                <p class="text-sm">TPIN Registration, Customs and Excise, Domestic Taxes</p>
-            </div>
-            <div class="bg-blue-700 p-4 rounded-md">
-                <h3 class="font-bold">Land and Property</h3>
-                <p class="text-sm">Land Ownership Procedure</p>
-            </div>
-            <div class="bg-blue-700 p-4 rounded-md">
-                <h3 class="font-bold">Immigration</h3>
-                <p class="text-sm">Visas and Permits</p>
-            </div>
-            <div class="bg-blue-700 p-4 rounded-md">
-                <h3 class="font-bold">Investment in Zambia</h3>
-                <p class="text-sm">Investor Guide, Multi-Facility Economic Zones</p>
-            </div>
-            <div class="bg-blue-700 p-4 rounded-md">
-                <h3 class="font-bold">Trading Across Borders</h3>
-                <p class="text-sm">Customs Services</p>
-            </div>
-        </div>
-    </section>
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <p>Business Links. Summary. Be creative</p>
-            <form class="flex space-x-2">
-                <input type="text" placeholder="Your Name" class="p-2 rounded-md text-gray-900">
-                <input type="email" placeholder="Your Email" class="p-2 rounded-md text-gray-900">
-                <button class="p-2 bg-blue-600 text-white rounded-md">Submit</button>
-            </form>
-        </div>
-    </footer>
+        // Language Dropdown Toggle
+        const languageButton = document.getElementById('language-button');
+        const languageDropdown = document.getElementById('language-dropdown');
+        const arrowIcon = document.getElementById('arrow-icon');
+        const languageLabel = document.getElementById('language-label');
+
+        languageButton.addEventListener('click', () => {
+            languageDropdown.classList.toggle('hidden');
+            arrowIcon.classList.toggle('rotate-180');
+        });
+
+        // Change Language
+        languageDropdown.addEventListener('click', (event) => {
+            const lang = event.target.getAttribute('data-lang');
+            if (lang) {
+                if (lang === 'sp') {
+                    languageLabel.textContent = 'SP';
+                    document.getElementById('about-title').textContent = 'Sobre nosotros';
+                    document.getElementById('about-description').textContent = 'Proporcionamos servicios integrales para obtener licencias comerciales adaptadas a sus necesidades.';
+                    document.getElementById('hero-title').textContent = 'Bienvenido a Licencia Comercial';
+                    document.getElementById('hero-description').textContent = 'Tu solución integral para todas las necesidades de licencias comerciales.';
+                    document.getElementById('site-title').textContent = 'Licencia Comercial';
+                    document.getElementById('get-started-button').textContent = 'Empezar';
+                    // Update navbar links for Spanish
+                    document.getElementById('nav-home').textContent = 'Inicio';
+                    document.getElementById('nav-about').textContent = 'Sobre Nosotros';
+                    document.getElementById('nav-contact').textContent = 'Contáctanos';
+                    document.getElementById('nav-faq').textContent = 'FAQ';
+                } else {
+                    languageLabel.textContent = 'EN';
+                    document.getElementById('about-title').textContent = 'About Us';
+                    document.getElementById('about-description').textContent = 'We provide comprehensive services for obtaining business licenses tailored to your needs.';
+                    document.getElementById('hero-title').textContent = 'Welcome to Business Licensing';
+                    document.getElementById('hero-description').textContent = 'Your one-stop solution for all business licensing needs.';
+                    document.getElementById('site-title').textContent = 'Business Licensing';
+                    document.getElementById('get-started-button').textContent = 'Get Started';
+                    // Update navbar links for English
+                    document.getElementById('nav-home').textContent = 'Home';
+                    document.getElementById('nav-about').textContent = 'About Us';
+                    document.getElementById('nav-contact').textContent = 'Contact Us';
+                    document.getElementById('nav-faq').textContent = 'FAQ';
+                }
+                languageDropdown.classList.add('hidden');
+                arrowIcon.classList.remove('rotate-180');
+            }
+        });
+
+        // Close dropdown on clicking outside
+        window.addEventListener('click', (event) => {
+            if (!languageButton.contains(event.target) && !languageDropdown.contains(event.target)) {
+                languageDropdown.classList.add('hidden');
+                arrowIcon.classList.remove('rotate-180');
+            }
+        });
+        
+// Animated Counter
+        const counters = document.querySelectorAll('.countup');
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+
+                if (count < target) {
+                    counter.innerText = count + Math.ceil(target / 100);
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        });
+
+
+    </script>
 </body>
 </html>
